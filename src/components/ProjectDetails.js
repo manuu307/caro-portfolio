@@ -1,12 +1,12 @@
 import { memo, useContext, useEffect, useState } from "react";
 import { Context } from "../context/context";
-import { LocalVideo } from "./ItemDetailsContent";
+//import { LocalVideo } from "./ItemDetailsContent";
 
 import dynamic from "next/dynamic";
 
-const ProjectSlider = dynamic(() => import("./ItemDetailsContent"), {
-  ssr: false,
-});
+// const ProjectSlider = dynamic(() => import("./ItemDetailsContent"), {
+//   ssr: false,
+// });
 
 const ProjectDetails = () => {
   const {
@@ -86,9 +86,9 @@ const ProjectDetails = () => {
       >
         <div className="row">
           {/* Project Main Content Starts */}
-          <div className="col s12 l6 xl6 section-padding section-padding-right-none">
+          {/* <div className="col s12 l6 xl6 section-padding section-padding-right-none">
             <ProjectSlider />
-          </div>
+          </div> */}
           {/* Project Main Content Ends */}
           {/* Project Details Starts */}
           <div className="col s12 l6 xl6 section-padding">
@@ -197,9 +197,9 @@ const ProjectDetails = () => {
       >
         <div className="row">
           {/* Project Main Content Starts */}
-          <div className="col s12 l6 xl6 section-padding section-padding-right-none">
+          {/* <div className="col s12 l6 xl6 section-padding section-padding-right-none">
             <LocalVideo playing={activeProject} />
-          </div>
+          </div> */}
           {/* Project Main Content Ends */}
           {/* Project Details Starts */}
           <div className="col s12 l6 xl6 section-padding">
