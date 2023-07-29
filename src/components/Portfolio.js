@@ -1,9 +1,23 @@
-import { memo, useCallback, useContext, useEffect } from "react";
+import { memo, useCallback, useContext, useEffect, useState } from "react";
 import { Context } from "../context/context";
 import { directionHover } from "../utils";
 import SectionContainer from "./SectionContainer";
-
+import VideoWidget from "./widgets/video-widget";
+import "react-modal-video/css/modal-video.css";
+const banner = {
+  position: "relative",
+  overflow: "hidden",
+};
+const videoembed = {
+  position: "absolute",
+  top: "0",
+  objectFit: "cover",
+  width: "100%",
+  height: "100%",
+  background: "#333",
+};
 const Portfolio = () => {
+  const [isOpen, setOpen] = useState(false);
   const { showProjectFunction, activeProjectFunction } = useContext(Context);
   useEffect(() => {
     directionHover();
@@ -55,12 +69,12 @@ const Portfolio = () => {
             {/* Project Starts */}
             <div className="col s12 m6 l6 xl4" data-panel="panel-2">
               {/* <a href="#" onClick={() => activeShowProject(2)}> */}
-                <img
-                  className="responsive-img"
-                  src="images/projects/project_2.png"
-                  alt="Project"
-                />
-                {/* <div className="valign-wrapper">
+              <img
+                className="responsive-img"
+                src="images/projects/project_2.png"
+                alt="Project"
+              />
+              {/* <div className="valign-wrapper">
                   <span className="font-weight-700 uppercase">
                     Slider Project
                   </span>
@@ -132,59 +146,26 @@ const Portfolio = () => {
             {/* Project Ends */}
             {/* Project Starts */}
             <div className="col s12 m6 l6 xl4" data-panel="panel-7">
-              {/* <a href="#" onClick={() => activeShowProject(7)}> */}
-              <video
-                style={{ width: "100%" }}
-                className="responsive-img"
-                src="images/projects/project_7.mp4"
-                alt="Project"
-                autoPlay
-                muted
+              <VideoWidget
+                fullVideoUrl="images/projects/hip_hop_fest.mp4"
+                placeHolderVideoUrl="images/projects/project_7.mp4"
               />
-              {/* <div className="valign-wrapper">
-                  <span className="font-weight-700 uppercase">
-                    Image Project
-                  </span>
-                </div>
-              </a> */}
             </div>
             {/* Project Ends */}
             {/* Project Starts */}
             <div className="col s12 m6 l6 xl4" data-panel="panel-8">
-              {/* <a href="#" onClick={() => activeShowProject(8)}> */}
-              <video
-                style={{ width: "100%" }}
-                className="responsive-img"
-                src="images/projects/project_8.mp4"
-                alt="Project"
-                autoPlay
-                muted
+              <VideoWidget
+                fullVideoUrl="images/projects/wedding-video.mp4"
+                placeHolderVideoUrl="images/projects/project_8.mp4"
               />
-              {/* <div className="valign-wrapper">
-                  <span className="font-weight-700 uppercase">
-                    Image Project
-                  </span>
-                </div>
-              </a> */}
             </div>
             {/* Project Ends */}
             {/* Project Starts */}
             <div className="col s12 m6 l6 xl4" data-panel="panel-9">
-              {/* <a href="#" onClick={() => activeShowProject(9)}> */}
-              <video
-                style={{ width: "100%" }}
-                className="responsive-img"
-                src="images/projects/project_9.mp4"
-                alt="Project"
-                autoPlay
-                muted
+              <VideoWidget
+                fullVideoUrl="images/projects/phone-video.mp4"
+                placeHolderVideoUrl="images/projects/project_9.mp4"
               />
-              {/* <div className="valign-wrapper">
-                  <span className="font-weight-700 uppercase">
-                    Image Project
-                  </span>
-                </div>
-              </a> */}
             </div>
             {/* Project Ends */}
           </div>
