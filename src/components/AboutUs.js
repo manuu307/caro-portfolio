@@ -318,7 +318,7 @@ const AboutUs = ({ dark }) => {
             {/* Picture Starts */}
             <div className="col s12 m4 profile-picture show-on-medium-and-down section-padding">
               <img
-                src="images/men.jpg"
+                src="images/profile-pic2.jpeg"
                 className="responsive-img my-picture"
                 alt="My Photo"
               />
